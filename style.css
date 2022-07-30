@@ -1,0 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face{
+	font-family: "Xilosa";
+	src: url("./fonts/xilosa.ttf");
+}
+
+body {
+    overflow: hidden;
+    background-image: url('./image/studio.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.inicializacao {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(72, 72, 72);
+    -webkit-animation: animate-div 3s;
+    transition: all ease 4s;
+}
+
+.inicializacao h1{
+    font-family: 'Xilosa';
+    font-size: 80px;
+    color: rgb(0, 255, 34);
+}
+
+.inicializacao h6{
+    font-size: 20px;
+    color: rgb(0, 255, 34);
+}
+
+@-webkit-keyframes animate-div {
+    0% { opacity: 1;}
+    50% { opacity: 1;}
+    75% { opacity: 0.7;}
+    100% { opacity: 0;}
+}
+
+section {
+    display: flex;
+    width: 98vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+img[usemap] {
+    border: none;
+    height: auto;
+    max-width: 100%;
+    width: auto;
+    -webkit-animation: animate-image 2s
+}
+
+@-webkit-keyframes animate-image {
+    0% { opacity: 0;}
+    100% { opacity: 1;}
+}
+
+map {
+    cursor: pointer;
+}
+
+.controles {
+    z-index: 2;
+    position: fixed;
+    left:0;
+    top:0;
+    bottom:0;
+    right:0;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.controles img{
+    border: none;
+    height: auto;
+    max-width: 100%;
+    width: auto;
+}
+
+.menu {
+    max-width: 100%;
+    max-height: 100%;
+    position: fixed;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(180deg, rgb(1, 96, 12), rgb(0, 15, 3));
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 4px;
+    border-radius: 7px;
+    text-align: center;
+    margin: 10px;
+}
+
+.menu p {
+    font-size: 10px;
+    opacity: 0;
+}
+
+.menu:hover p {
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+.navegacao {
+    font-size: 30px;
+    color: #FFF;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.composicao {
+    z-index: 4;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: rgba(72, 72, 72, 0.7);
+    flex-direction: column;
+}
+
+.composicao h1 {
+    font-family: 'Xilosa';
+    color: rgb(0, 255, 34);
+    font-size: 70px;
+}
+
+.composicao input {
+    width: 450px;
+    height: 50px;
+    border: 1px solid #999;
+    padding: 8px;
+    font-size: 20px;
+    outline: 0;
+    margin: 20px;
+    border-radius: 4px;
+}
+
+.composicao button {
+    padding: 10px;
+    border: 0px;
+    border-radius: 5px;
+    color: #000;
+}
+
+.composicao button.play {
+    background: rgba(0, 255, 34, 0.535);
+}
+
+.composicao button.play:hover {
+    background: rgba(0, 255, 34, 1);
+    transition: background 1s;
+}
+
+
+.composicao button.fechar {
+    background: rgba(255, 0, 0, 0.535);
+}
+
+.composicao button.fechar:hover {
+    background: rgba(255, 0, 0, 1);
+    transition: background 1s;
+}

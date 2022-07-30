@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bateria do Piseiro</title>
+    <link rel="shortcut icon" href="./icone.png">
+    <link rel="stylesheet" href="style.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="inicializacao">
+        <h1>Bateria Eletrônica [Forró - Piseiro]</h1>
+        <h6>by Diego Araújo</h6>
+    </div>
+    <div class="menu">
+        <div class="navegacao">
+            <i class="fa fa-keyboard-o" aria-hidden="true" onclick="mostrarTeclado()"><p>Mostrar<br>Teclado<br>[ESC]</nr></p></i>
+        </div>
+        <div class="navegacao">
+            <i class="fa fa-music" aria-hidden="true" onclick="abrirComposicao()"><p>Criar<br>Som</p></i>
+        </div>
+    </div>
+    <div class="composicao">
+        <h1>Crie um som!</h1>
+        <input id="song" type="text">
+        <div>
+            <button class="play">PLAY</button>
+            <button class="fechar" onclick="fecharComposicao()">FECHAR</button>
+        </div>
+    </div>
+    <section>
+        <div class="controles" style="display: none;">
+            <img src="./image/controles.png" usemap="#image-map">
+        </div>
+        <div class="bateria">
+            <img src="./image/bateria.png" id="bateria" alt="Bateria-Eletrônica" usemap="#image-map">
+            <map name="image-map">
+                <area data-instrument="box1" alt="Caixa Baixa 1" title="Caixa Baixa 1" onclick="playSound(this.getAttribute('data-instrument'))" coords="754,805,150" shape="circle">
+                <area data-instrument="box2" alt="Caixa Baixa 2" title="Caixa Baixa 2" onclick="playSound(this.getAttribute('data-instrument'))" coords="1132,668,1097,710,1078,765,1080,819,1090,846,1112,882,1137,905,1183,931,1247,938,1298,927,1329,916,1356,895,1380,863,1388,829,1376,802,1356,782,1337,754,1317,717,1314,695,1310,670,1268,649,1225,644,1176,651" shape="poly">
+                <area data-instrument="box3" alt="Caixa Alta 1" title="Caixa Alta 1" onclick="playSound(this.getAttribute('data-instrument'))" coords="798,475,124" shape="circle">
+                <area data-instrument="box4" alt="Caixa Alta 2" title="Caixa Alta 2" onclick="playSound(this.getAttribute('data-instrument'))" coords="1128,477,130" shape="circle">
+                <area data-instrument="dish2"alt="Prato Baixo 1" title="Prato Baixo 1" onclick="playSound(this.getAttribute('data-instrument'))" coords="203,526,176,549,152,578,135,621,133,663,145,715,174,758,225,783,289,792,374,775,418,749,455,704,474,671,488,631,484,600,472,549,437,515,405,495,359,485,303,485,247,500" shape="poly">
+                <area data-instrument="dish3" alt="Prato Baixo 2" title="Prato Baixo 2" onclick="playSound(this.getAttribute('data-instrument'))" coords="1370,549,1344,583,1324,627,1317,673,1327,721,1349,763,1371,795,1415,831,1458,851,1512,865,1570,868,1602,866,1636,856,1675,832,1700,810,1724,780,1739,739,1739,685,1724,627,1692,585,1646,546,1595,522,1521,505,1463,505,1417,521" shape="poly">
+                <area data-instrument="dish4" alt="Prato Alto 1" title="Prato Alto 1" onclick="playSound(this.getAttribute('data-instrument'))" coords="488,153,462,180,444,222,437,268,452,322,486,365,537,390,603,400,650,397,695,380,735,356,769,322,783,280,784,222,767,178,744,146,696,122,640,109,601,107,544,122" shape="poly">
+                <area data-instrument="dish1" alt="Prato Alto 2" title="Prato Alto 2" onclick="playSound(this.getAttribute('data-instrument'))" coords="1220,141,1190,166,1156,207,1146,263,1154,303,1175,348,1203,371,1231,385,1258,400,1319,415,1358,415,1409,407,1448,390,1482,365,1502,332,1517,297,1526,264,1515,224,1485,175,1434,137,1393,120,1331,110,1268,117" shape="poly">
+                <area data-instrument="bassDrum" alt="Bumbo" title="Bumbo" onclick="playSound(this.getAttribute('data-instrument'))" coords="947,626,1007,629,1044,634,1078,646,1122,666,1110,683,1083,705,1071,729,1056,753,1051,765,1032,768,1020,787,1007,836,998,894,986,953,980,997,968,1009,942,1010,932,990,922,970,917,922,905,868,925,810,917,761,903,717,883,685,834,658,852,644,888,632,922,629" shape="poly">
+            </map>
+        </div>
+    </section>
+
+    <audio id="box3" src="./sounds/box1.wav"></audio>
+    <audio id="box4" src="./sounds/box2.wav"></audio>
+    <audio id="box1" src="./sounds/box3.wav"></audio>
+    <audio id="box2" src="./sounds/box4.wav"></audio>
+    <audio id="dish1" src="./sounds/dish1.wav"></audio>
+    <audio id="dish2" src="./sounds/dish2.wav"></audio>
+    <audio id="dish3" src="./sounds/dish3.wav"></audio>
+    <audio id="dish4" src="./sounds/dish4.wav"></audio>
+    <audio id="bassDrum" src="./sounds/bassDrum.wav"></audio>
+    
+    <script src="script.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="./jQuery/jquery.rwdImageMaps.min.js"></script>
+    <script>
+        $('img[usemap]').rwdImageMaps();
+    </script>
+</body>
+</html>
